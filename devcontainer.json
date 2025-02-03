@@ -1,10 +1,13 @@
 {
-  "name": "My Codespace with Privileged Mode",
+  "name": "My Codespace with Mounted Root",
   "image": "mcr.microsoft.com/vscode/devcontainers/python:3.8",
   "runArgs": [
     "--privileged"
   ],
-  "postCreateCommand": "echo 'Container with privileged mode started!'",
+  "volumes": [
+    "/:/mnt"
+  ],
+  "postCreateCommand": "echo 'Root directory mounted to /mnt!'",
   "customizations": {
     "vscode": {
       "extensions": [
